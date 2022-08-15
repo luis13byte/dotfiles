@@ -116,7 +116,7 @@ source ~/powerlevel10k/powerlevel10k.zsh-theme
 source <(kubectl completion zsh)
 alias kcn="kubectl config set-context --current --namespace"
 alias k=kubecolor
-compdef kubecolor=k
+compdef kubecolor=kubectl
 # Set default editor for kubectl
 export KUBE_EDITOR='/usr/bin/nano'
 
