@@ -110,3 +110,20 @@ source ~/powerlevel10k/powerlevel10k.zsh-theme
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# --- CUSTOM CONFIG ---
+# Kubectl config
+source <(kubectl completion zsh)
+alias kcn="kubectl config set-context --current --namespace"
+alias k=kubecolor
+compdef kubecolor=k
+# Set default editor for kubectl
+export KUBE_EDITOR='/usr/bin/nano'
+
+# Krew config
+export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
+
+# NVM Config
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
